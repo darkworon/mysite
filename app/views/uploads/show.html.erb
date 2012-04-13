@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<h1>Скачивание файла <%= @upload.file_file_name %></h1>
+<ul>Размер: <b><%= @upload.size %></b></ul>
+<ul>Content-Type: <b><%= @upload.file_content_type %></b></ul>
+
+
+
+<br /><br />
+<ul><h2>
+<% if @upload.file_type == 0 %>
+<%= link_to "Скачать", download_file_path(link: @upload.access_token, filename: @upload.file_file_name) %><br />
+<% else %>
+<%= link_to (image_tag view_style_path(style: "medium", link: @upload.access_token, filename: @upload.file_file_name), title: @upload.file_file_name, :class => "class"), view_style_path(style: "original", link: @upload.access_token, filename: @upload.file_file_name) %>
+<% end %>
+</h2></ul>
+<br /><br />
+<%= link_to 'Назад', uploads_path %>

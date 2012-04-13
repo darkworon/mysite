@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "login" %>
+
+<h1>Вход</h1>
+<%= form_tag login_path(back_url: params[:back_url]), :class => "login", :id => "login" do %>
+
+<p>
+	<%= label_tag :email, "Email:" %><br />
+	<%= text_field_tag :email, params[:email], class: "normal" %>
+</p>
+<p>
+	<%= label_tag :password, "Пароль:" %><br />
+	<%= password_field_tag :password, params[:password], class: "normal" %>
+</p>
+	<center>
+	<p>
+		<%= submit_tag "Войти", class: "normal_btn", style: "height:40px;" %>
+	</p>
+	</center>
+<% end %>

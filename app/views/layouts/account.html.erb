@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mysite</title>
+  <%= stylesheet_link_tag    "account", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="header">
+		<div class="head_1"></div>
+		<div class="head_2">
+			<div class="logo">
+			<a href="/" class="main_logo">mysite</a>
+			</div>
+		</div>
+		<div class="head_3">
+			<div class="main_menu">
+				<%= link_to "Главная", home_path, class: cp(home_path) %>
+				<%= link_to "О нас", about_path, class: cp(about_path) %>
+			</div>
+		</div>
+		<div class="head_4">
+			<div class="user_control_panel">
+				<%= render 'layouts/user_panel' %>
+			</div>
+		</div>
+	</div>
+	<div class="body">
+		
+		<div class="body_center">
+			
+			<div class="main_content"><%= yield %></div>
+		</div>
+	</div>
+	<div class="footer">
+		<span class="footer_content">
+			Powered by WoRoN &copy; 2012
+		</span>
+		<span class="footer_content">
+			Позже тут будет переключатель локалей...
+		</span>
+	</div>
+</body>
+</html>

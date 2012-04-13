@@ -1,0 +1,31 @@
+ru:
+  file_sizes:
+    hundred: "Б"
+    thousand: "КБ"
+  activerecord:
+    attributes:
+      upload:
+        file: Файл
+      user:
+        email: Email
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        submit: Регистрация
+    errors:
+      models:
+        upload:
+          attributes:
+            file:
+              blank: "должен быть выбран."
+        user:
+          attributes:
+            email:
+              blank: должен быть введен.
+              taken: уже зарегистрирован.
+              invalid: введен некорректно.
+            password_confirmation:
+              blank: должно быть введено.
+            password:
+              confirmation: не совпадает с подтверждением.
+              blank: должен быть введен.
+              too_short: слишком короткий.

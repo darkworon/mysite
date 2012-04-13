@@ -1,0 +1,16 @@
+<%= form_for @upload, :html => { :multipart => true } do |f| %>
+  <% if @upload.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @upload.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<%= f.label :file, "Выберите файл:" %><br />
+	<%= f.file_field :file %><br /><br />
+  <p>
+    <%= f.submit "Загрузить", class: "normal_btn", style: "height:40px; width:90px;" %>
+  </p>
+<% end %>

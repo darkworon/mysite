@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "login" %>
+<div id="tab2" class="tab_content">
+	<h2>Мой профиль</h2>
+	<%= form_for @user, url: update_profile_path do |f| %>
+	
+	 <p><%= f.label :firstname, "Имя:" %><br />
+	    <%= f.text_field :firstname, class: "normal" %></p>
+	  
+	  
+	    <p><%= f.label :lastname, "Фамилия:" %><br />
+	    <%= f.text_field :lastname, class: "normal" %></p>
+	
+		<p><%= f.label :city, "Город" %><br />
+	    <%= f.text_field :city, class: "normal" %></p>
+	
+		<p><%= f.label :phone, "Телефон:" %><br />
+	    <%= f.text_field :phone, class: "normal" %></p>
+	  
+	  
+	    <p><%= f.label :password, "Новый пароль:" %><br />
+	    <%= f.password_field :password, class: "normal" %></p>
+	  
+	   <center><p><%= f.submit "Обновить", class: "normal_btn", style: "height:40px;" %></p></center>
+	  
+<% end %>

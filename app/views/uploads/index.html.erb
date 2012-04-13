@@ -1,0 +1,25 @@
+<h1>Загруженные вами файлы</h1>
+
+<table>
+  <tr>
+		<th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @uploads.each do |upload| %>
+  <tr>
+		<% if upload.file_type == 0 %>
+		<td><%= link_to upload.file_file_name, download_page_path(link: upload.access_token) %></td>
+		<% else %>
+		<td><%= link_to (image_tag view_style_path(style: "thumb", link: upload.access_token, filename: upload.file_file_name), title: upload.file_file_name, :class => "class"), download_page_path(link: upload.access_token) %></td>
+		<% end %>
+    <td><%= link_to 'Destroy', upload, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Загрузить', new_upload_path %>
